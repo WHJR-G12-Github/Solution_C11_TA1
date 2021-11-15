@@ -13,17 +13,17 @@ speed=0
 class Bird:
     # Creating 'bird' rectangle
     bird=pygame.Rect(100,250,30,30)
-    # Defining 'movedown()' function to make the bird move down
+    # Defining 'movedown()' method to make the bird move down
     def movedown(self):
         global speed
         gravity=0.2
         speed=speed+gravity
         self.bird.y=self.bird.y+speed
-     # Defining 'moveup()' function to make the bird move up
+     # Defining 'moveup()' method to make the bird move up
     def moveup(self):
         global speed
         speed=speed-10
-    # Defining 'display()' function to display the bird image
+    # Defining 'display()' method to display the bird image
     def display(self):
         screen.blit(images["bird"],self.bird)
 
@@ -37,9 +37,9 @@ while True:
   if groundx<-450:
       groundx=0
   screen.blit(images["ground"],[groundx,550])
-  # Calling the function 'movedown()' using the object 'bird1'
+  # Calling the method 'movedown()' using the object 'bird1'
   bird1.movedown()
-  # Calling the function 'display()' using the object 'bird1'
+  # Calling the method 'display()' using the object 'bird1'
   bird1.display()
   
   for event in pygame.event.get():
@@ -48,7 +48,7 @@ while True:
   
     if event.type==pygame.KEYDOWN:
         if event.key==pygame.K_SPACE:
-            # Calling the function 'moveup()' using the object 'bird1'
+            # Calling the method 'moveup()' using the object 'bird1'
             bird1.moveup()  
   
   pygame.display.update()
